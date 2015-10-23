@@ -1,24 +1,32 @@
 #ifndef player
 #define player 
 
-#include <stdio>
-#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
 
-Class Player {
+using namespace::std;
+
+class Player {
 
 private:
   string name;
   int *totalScore;
   int *totalBid;
+  int *streak;
 
 public:
-  void Player::Player();
-  void Player::~Player();
+  Player();
+  ~Player();
 
-  void Player::updateScore(int roundScore);
-  void Player::updateBid(int roundBid);
-  void Player::assign(string name, int numRounds);
+  void updateScore(int score, int round);
+  void updateBid(int bid, int round);
+  void assign(string name, int numRounds);
+  string getName();
+  int getScore(int round);
+  int getBid(int round);
 
-}
+};
+ 
 
 #endif

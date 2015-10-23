@@ -1,26 +1,34 @@
 #ifndef game
 #define game
 
-#include <stdlib>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
 
-Class Game {
+#include "player.hpp"
+
+using namespace::std;
+
+class Game {
 
 private:
   int numPlayers;
   int numRounds;
-  char *trumps = "cdhsn";
-  Player *player;
+  int numCards;
+//  char *trumps = new char [5] "cdhsn";
+  Player *playerList;
 
-  void enterBids();
-  void enterScores();
-  void printScores();
+  int enterBids(int round);
+  int enterScores(int round);
+  void printScores(int round);
   
 public:
-  void Game::Game(int players);
-  void Game::~Game();
-  void Game::addPlayer(string name, int number);
-  void Game::play();
+  Game(int players);
+  ~Game();
+  void addPlayer(string name, int number);
+  void play();
 
-}
+};
 
 #endif
